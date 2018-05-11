@@ -58,7 +58,7 @@ def buildArch(archs) {
         }
     }
     allArchs << "${STAGE_NAME}"
-    stash name: "${STAGE_NAME}", includes: "output/images/*/*, output/modules/*/*/*/*, output/packages/*/*/*/*"
+    stash name: "${STAGE_NAME}", includes: "output/images/*/*, output/packages/*/*/*/*"
 }
 
 pipeline {
@@ -201,7 +201,7 @@ pipeline {
                         make manifest GLUON_BRANCH=beta
                         make manifest GLUON_BRANCH=nightly
                     """
-                    archiveArtifacts artifacts: 'output/images/*/*, output/modules/*/*/*/*, output/packages/*/*/*/*', fingerprint: true
+                    archiveArtifacts artifacts: 'output/images/*/*, output/packages/*/*/*/*', fingerprint: true
             } }
         }
     }
