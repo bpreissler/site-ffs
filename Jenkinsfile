@@ -58,6 +58,8 @@ def buildArch(archs) {
         }
     }
     allArchs << "${STAGE_NAME}"
+    sh "find output/images"
+    sh "find output/packages"
     stash name: "${STAGE_NAME}", includes: "output/images/*/*, output/packages/*/*/*/*"
 }
 
