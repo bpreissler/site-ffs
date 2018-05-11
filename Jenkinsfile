@@ -151,7 +151,7 @@ pipeline {
                         buildArch(["${STAGE_NAME}"])
                     } }
                 }
-                stage('ramips-mt7621') {
+                stage('ramips') {
                     agent any
                     when { expression {return params.ramips_mt7621 || params.ramips_mt7628 || params.ramips_rt305x } }
                     steps { script { 
