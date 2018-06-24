@@ -21,7 +21,7 @@ Per default, all broken targets will be build also. You can choose to
 run make clean before building each architecture. You can check
 clean_workspace to build entirely from scratch. 
 
-Note that bcrm2708_2710 is not supported with v2017.1.7, but on gluon
+Note that bcrm2708_2710 is not supported with v2017.1.8, but on gluon
 master branch. It will be supported in a later release. 
 
 If you want to use a different gluon version, you can modify the gluon
@@ -87,7 +87,7 @@ pipeline {
         booleanParam(name: 'make_clean', defaultValue: false, description: 'execute make clean before building each architecture' )
         booleanParam(name: 'clean_workspace', defaultValue: false, description: 'delete all files in workspace before building' )
         choice(name: 'broken', choices: '1\n0', description: 'wether to build broken targets or not')
-        string(defaultValue: "refs/tags/v2017.1.7", name: 'gluon', description: 'gluon release tag')
+        string(defaultValue: "refs/tags/v2017.1.8", name: 'gluon', description: 'gluon release tag')
         string(defaultValue: "*/master", name: 'site', description: 'site release tag, branch or commit')
         string(defaultValue: "", name: 'deploy_to', description: 'target for rsync\nExample: www@netinfo:/home/www/html/firmware/gluon/archive/@leonard')
     }
