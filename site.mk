@@ -33,6 +33,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-neighbour-info \
 	gluon-mesh-vpn-fastd \
 	gluon-radvd \
+	gluon-radv-filterd \
 	gluon-setup-mode \
 	gluon-status-page \
 	haveged \
