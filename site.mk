@@ -35,6 +35,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-radvd \
 	gluon-radv-filterd \
 	gluon-setup-mode \
+	gluon-ssid-changer \
 	gluon-status-page \
 	haveged \
 	iptables \
