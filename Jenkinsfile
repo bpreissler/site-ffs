@@ -87,7 +87,7 @@ pipeline {
         booleanParam(name: 'make_clean', defaultValue: false, description: 'execute make clean before building each architecture' )
         booleanParam(name: 'clean_workspace', defaultValue: false, description: 'delete all files in workspace before building' )
         choice(name: 'broken', choices: '1\n0', description: 'wether to build broken targets or not')
-        string(defaultValue: "refs/tags/v2018.1", name: 'gluon', description: 'gluon release tag')
+        string(defaultValue: "refs/tags/v2018.2", name: 'gluon', description: 'gluon release tag')
         string(defaultValue: "*/master", name: 'site', description: 'site release tag, branch or commit')
         string(defaultValue: "", name: 'deploy_to', description: 'target for rsync\nExample: www@netinfo:/home/www/html/firmware/gluon/archive/@leonard')
     }
