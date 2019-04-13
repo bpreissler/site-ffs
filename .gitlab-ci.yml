@@ -1,0 +1,16 @@
+image: registry.gitlab.com/freifunk-region/stuttgart/buildenv:master
+
+variables:
+  GIT_SUBMODULE_STRATEGY: normal
+
+stages:
+  - build
+
+build:
+  stage: build
+  script:
+    - ./buildall.sh
+  artifacts: 
+    paths:
+      - gluon/output/
+    expire_in: 1 day

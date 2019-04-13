@@ -22,9 +22,9 @@ TARGETS=(
 )
 
 sitedir=$(readlink -f $(dirname $0))
-make -C gluon update GLUON_SITEDIR="$sitedir"
+make -C gluon update GLUON_SITEDIR="$sitedir" V=1
 
 for target in ${TARGETS[@]}; do
 	echo Building $target
-	make -C gluon GLUON_TARGET=$target GLUON_BRANCH=$branch GLUON_SITEDIR="$sitedir" -j`nproc`
+	make -C gluon GLUON_TARGET=$target GLUON_BRANCH=$branch GLUON_SITEDIR="$sitedir" V=1 -j`nproc`
 done
