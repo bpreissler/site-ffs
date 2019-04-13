@@ -5,6 +5,7 @@ GLUON_FEATURES := \
 	mesh-batman-adv-15 \
 	mesh-vpn-fastd \
 	radvd \
+	radv-filterd \
 	respondd \
 	alfred \
 	status-page \
@@ -12,31 +13,12 @@ GLUON_FEATURES := \
 	web-wizard
 
 GLUON_SITE_PACKAGES := \
-	gluon-mesh-batman-adv-15 \
-	gluon-alfred \
-	gluon-respondd \
-	gluon-autoupdater \
-	gluon-config-mode-autoupdater \
-	gluon-config-mode-contact-info \
-	gluon-config-mode-core \
-	gluon-config-mode-geo-location \
-	gluon-config-mode-hostname \
-	gluon-config-mode-mesh-vpn \
 	gluon-config-mode-zip \
-	gluon-ebtables-filter-multicast \
-	gluon-ebtables-filter-ra-dhcp \
-	gluon-web-admin \
-	gluon-web-autoupdater \
-	gluon-web-wifi-config \
 	gluon-web-private-wifi \
 	gluon-web-mesh-vpn-fastd \
 	gluon-neighbour-info \
 	gluon-mesh-vpn-fastd \
-	gluon-radvd \
-	gluon-radv-filterd \
-	gluon-setup-mode \
 	gluon-ssid-changer \
-	gluon-status-page \
 	haveged \
 	iptables \
 	iwinfo \
