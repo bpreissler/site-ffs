@@ -3,7 +3,6 @@
 set -eu
 set -o pipefail
 
-build_date=$(date +%Y-%m-%d)
 branch=nightly
 
 TARGETS=(
@@ -22,7 +21,10 @@ TARGETS=(
 	x86-geode
 )
 
+sitedir=$(readlink -f $(dirname $0))
+make -C gluon update GLUON_SITEDIR="$sitedir"
+
 for target in ${TARGETS[@]}; do
 	echo Building $target
-	make -C gluon GLUON_TARGET=$target -j5 BUILD_DATE=$build_date GLUON_BRANCH=$branch GLUON_SITEDIR=../
+	make -C gluon GLUON_TARGET=$target GLUON_BRANCH=$branch GLUON_SITEDIR="$sitedir" -j`nproc`
 done
