@@ -10,7 +10,7 @@ stages:
   stage: build
   script:
     - make -C gluon update GLUON_SITEDIR="$CI_PROJECT_DIR"
-    - make -C gluon GLUON_SITEDIR="$CI_PROJECT_DIR" GLUON_TARGET="$GLUON_TARGET" V=1
+    - make -C gluon GLUON_SITEDIR="$CI_PROJECT_DIR" GLUON_TARGET="$GLUON_TARGET" V=1 -j`nproc`
   artifacts: 
     paths:
       - gluon/output/
