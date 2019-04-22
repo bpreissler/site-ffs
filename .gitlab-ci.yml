@@ -5,12 +5,13 @@ variables:
 
 stages:
   - build
+  - package
 
 .target: &target
   stage: build
   script:
     - make -C gluon update GLUON_SITEDIR="$CI_PROJECT_DIR"
-    - make -C gluon GLUON_SITEDIR="$CI_PROJECT_DIR" GLUON_TARGET="$GLUON_TARGET" V=1 -j`nproc`
+    - make -C gluon GLUON_SITEDIR="$CI_PROJECT_DIR" GLUON_TARGET="$GLUON_TARGET" GLUON_BRANCH=nightly V=1 -j`nproc`
   artifacts: 
     paths:
       - gluon/output/
@@ -75,3 +76,26 @@ target:x86-64:
   <<: *target
   variables:
     GLUON_TARGET: x86-64
+
+package:
+  stage: package
+  dependencies:
+    - target:ar71xx-generic
+    - target:ar71xx-tiny
+    - target:ar71xx-nand
+    - target:brcm2708-bcm2708
+    - target:brcm2708-bcm2709
+    - target:ipq40xx
+    - target:mpc85xx-generic
+    - target:ramips-mt7621
+    - target:x86-generic
+    - target:x86-geode
+    - target:x86-64
+  script:
+    - make -C gluon update GLUON_SITEDIR="$CI_PROJECT_DIR"
+    - make -C gluon manifest GLUON_BRANCH=nightly GLUON_SITEDIR="$CI_PROJECT_DIR" V=1
+  artifacts:
+    paths:
+      - gluon/output
+    expire_in: 7 days
+
