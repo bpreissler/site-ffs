@@ -19,7 +19,7 @@ stages:
   stage: build
   script:
     - make -C gluon update GLUON_SITEDIR="$CI_PROJECT_DIR"
-    - make -C gluon GLUON_SITEDIR="$CI_PROJECT_DIR" GLUON_TARGET="$GLUON_TARGET" GLUON_BRANCH=nightly V=1 -j`nproc`
+    - make -C gluon GLUON_SITEDIR="$CI_PROJECT_DIR" GLUON_TARGET="$GLUON_TARGET" GLUON_BRANCH=$(./get-gluon-branch.sh) V=1 -j`nproc`
   artifacts: 
     paths:
       - gluon/output/
@@ -132,8 +132,9 @@ target:x86-64:
 package:
   stage: package
   script:
-    - make -C gluon update GLUON_SITEDIR="$CI_PROJECT_DIR"
-    - make -C gluon manifest GLUON_BRANCH=nightly GLUON_SITEDIR="$CI_PROJECT_DIR" V=1
+    - GLUON_BRANCH=$(./get-gluon-branch.sh)
+    - test -z "$GLUON_BRANCH" || make -C gluon update GLUON_SITEDIR="$CI_PROJECT_DIR"
+    - test -z "$GLUON_BRANCH" || make -C gluon manifest GLUON_BRANCH=$(./get-gluon-branch.sh) GLUON_SITEDIR="$CI_PROJECT_DIR" V=1
   artifacts:
     paths:
       - gluon/output
