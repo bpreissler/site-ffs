@@ -1,4 +1,4 @@
-image: registry.gitlab.com/freifunk-region/stuttgart/buildenv:master
+image: registry.gitlab.freifunk-stuttgart.de/firmware/ffs-buildenv:master
 
 variables:
   GIT_SUBMODULE_STRATEGY: normal
