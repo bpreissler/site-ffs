@@ -25,7 +25,9 @@ stages:
       - gluon/output/
     expire_in: 1 day
   cache:
-    untracked: true
+    paths:
+      - gluon/packages
+      - gluon/openwrt/dl
     key: "$CI_COMMIT_TAG-$GLUON_TARGET"
  
 target:ar71xx-generic:
