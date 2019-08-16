@@ -27,7 +27,9 @@ stages:
     expire_in: 1 day
   cache:
     paths:
-      - gluon/openwrt/
+      - gluon/openwrt/dl
+      - gluon/openwrt/staging_dir
+      - gluon/openwrt/feeds
     key: "gluon-cache"
  
 target:ar71xx-generic:
