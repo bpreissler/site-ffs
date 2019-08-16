@@ -30,7 +30,7 @@ stages:
       - gluon/openwrt/dl
       - gluon/openwrt/staging_dir
       - gluon/openwrt/feeds
-    key: "gluon-cache/$GLUON_TARGET"
+    key: "target-$GLUON_TARGET"
  
 target:ar71xx-generic:
   extends: .target
