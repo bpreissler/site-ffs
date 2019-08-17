@@ -23,6 +23,7 @@ GLUON_SITE_PACKAGES := \
 	iptables \
 	iwinfo \
 	ffs-set-segment \
+	ffs-allow-wan-status \
 	ffs-watchdog
 
 # add addition network drivers and usb support only to targes where disk space does not matter.
