@@ -1,6 +1,7 @@
 GLUON_SITE_FEEDS='ffs ssidchanger'
 
 PACKAGES_FFS_REPO=https://gitlab.freifunk-stuttgart.de/firmware/gluon-packages.git
+PACKAGES_SSIDCHANGER_BRANCH=nrb/allow-wan-status
 
 PACKAGES_SSIDCHANGER_REPO=https://gitlab.freifunk-stuttgart.de/firmware/gluon-ssid-changer.git
 PACKAGES_SSIDCHANGER_COMMIT=3c6750ce8fc9cedabfa8a6f479fb12d343c6ecc2
