@@ -8,19 +8,12 @@ stages:
   - build
   - package
 
-# Build Types
-# ----
-#
-# * commit: build all branches on commit for x86-64 target.#
-# * nightly: built once a night from `master` branch for all targets. 
-# * beta: built from tag starting with "beta/", i.e. "beta/1.7-beta01" for all targets.
-# * stable: built from tag starting with "stable/", i.e. "stable/1.5" for all targets.
 
 .target:
   stage: build
   script:
     - make -C gluon update GLUON_SITEDIR="$CI_PROJECT_DIR"
-    - make -C gluon GLUON_SITEDIR="$CI_PROJECT_DIR" GLUON_TARGET="$GLUON_TARGET" GLUON_BRANCH=$(./get-gluon-branch.sh) V=1 -j`nproc`
+    - make -C gluon GLUON_SITEDIR="$CI_PROJECT_DIR" GLUON_TARGET="$GLUON_TARGET" GLUON_BRANCH=stable V=1 -j`nproc`
   artifacts: 
     paths:
       - gluon/output/
