@@ -47,7 +47,7 @@ DEFAULT_BUILD_DATE := $(shell date '+%Y-%m-%d')
 
 BUILD_DATE ?= $(DEFAULT_BUILD_DATE)
 
-DEFAULT_GLUON_RELEASE := 1.6+$(BUILD_DATE)-g.$(shell git -C $(GLUON_SITEDIR)/gluon log --pretty=format:'%h' -n 1)-s.$(shell git -C $(GLUON_SITEDIR) log --pretty=format:'%h' -n 1)
+DEFAULT_GLUON_RELEASE := 1.7+$(BUILD_DATE)-g.$(shell git -C $(GLUON_SITEDIR)/gluon log --pretty=format:'%h' -n 1)-s.$(shell git -C $(GLUON_SITEDIR) log --pretty=format:'%h' -n 1)
 
 GLUON_LANGS := de en
 
