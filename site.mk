@@ -4,7 +4,6 @@ GLUON_FEATURES := \
 	ebtables-filter-ra-dhcp \
 	mesh-batman-adv-15 \
 	mesh-vpn-fastd \
-	radvd \
 	radv-filterd \
 	respondd \
 	alfred \
@@ -62,3 +61,6 @@ GLUON_PRIORITY ?= 0.1
 
 #enable generation of images for ath10k devices with ibss mode
 GLUON_WLAN_MESH ?= 11s
+
+# only build upgrade images for legacy devices
+GLUON_DEPRECATED ?= upgrade
