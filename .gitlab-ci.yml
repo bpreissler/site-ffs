@@ -27,6 +27,7 @@ stages:
 target:ar71xx-generic:
   extends: .target
   only: 
+    - nightly
     - schedules
     - web
   variables:
@@ -35,6 +36,7 @@ target:ar71xx-generic:
 target:ar71xx-nand:
   extends: .target
   only: 
+    - nightly
     - schedules
     - web
   variables:
@@ -43,6 +45,7 @@ target:ar71xx-nand:
 target:ar71xx-tiny:
   extends: .target
   only: 
+    - nightly
     - schedules
     - web
   variables:
@@ -51,6 +54,7 @@ target:ar71xx-tiny:
 target:brcm2708-bcm2708:
   extends: .target
   only: 
+    - nightly
     - schedules
     - web
   variables:
@@ -59,6 +63,7 @@ target:brcm2708-bcm2708:
 target:brcm2708-bcm2709:
   extends: .target
   only: 
+    - nightly
     - schedules
     - web
   variables:
@@ -67,6 +72,7 @@ target:brcm2708-bcm2709:
 target:mpc85xx-generic:
   extends: .target
   only: 
+    - nightly
     - schedules
     - web
   variables:
@@ -75,6 +81,7 @@ target:mpc85xx-generic:
 target:ipq40xx:
   extends: .target
   only: 
+    - nightly
     - schedules
     - web
   variables:
@@ -83,6 +90,7 @@ target:ipq40xx:
 target:ramips-mt7621:
   extends: .target
   only: 
+    - nightly
     - schedules
     - web
   variables:
@@ -91,6 +99,7 @@ target:ramips-mt7621:
 target:ramips-mt76x8:
   extends: .target
   only: 
+    - nightly
     - schedules
     - web
   variables:
@@ -99,6 +108,7 @@ target:ramips-mt76x8:
 target:x86-generic:
   extends: .target
   only: 
+    - nightly
     - schedules
     - web
   variables:
@@ -107,6 +117,7 @@ target:x86-generic:
 target:x86-geode:
   extends: .target
   only: 
+    - nightly
     - schedules
     - web
   variables:
