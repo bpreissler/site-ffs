@@ -13,6 +13,8 @@ stages:
   script:
     - make -C gluon update GLUON_SITEDIR="$CI_PROJECT_DIR"
     - make -C gluon GLUON_SITEDIR="$CI_PROJECT_DIR" GLUON_TARGET="$GLUON_TARGET" GLUON_BRANCH=stable V=1 -j`nproc`
+  except:
+    - tags
   artifacts: 
     paths:
       - gluon/output/
@@ -26,107 +28,61 @@ stages:
  
 target:ar71xx-generic:
   extends: .target
-  only: 
-    - nightly
-    - schedules
-    - web
   variables:
     GLUON_TARGET: ar71xx-generic
  
 target:ar71xx-nand:
   extends: .target
-  only: 
-    - nightly
-    - schedules
-    - web
   variables:
     GLUON_TARGET: ar71xx-nand
  
 target:ar71xx-tiny:
   extends: .target
-  only: 
-    - nightly
-    - schedules
-    - web
   variables:
     GLUON_TARGET: ar71xx-tiny
  
 target:brcm2708-bcm2708:
   extends: .target
-  only: 
-    - nightly
-    - schedules
-    - web
   variables:
     GLUON_TARGET: brcm2708-bcm2708
  
 target:brcm2708-bcm2709:
   extends: .target
-  only: 
-    - nightly
-    - schedules
-    - web
   variables:
     GLUON_TARGET: brcm2708-bcm2709
  
 target:mpc85xx-generic:
   extends: .target
-  only: 
-    - nightly
-    - schedules
-    - web
   variables:
     GLUON_TARGET: mpc85xx-generic
  
 target:ipq40xx:
   extends: .target
-  only: 
-    - nightly
-    - schedules
-    - web
   variables:
     GLUON_TARGET: ipq40xx
  
 target:ramips-mt7621:
   extends: .target
-  only: 
-    - nightly
-    - schedules
-    - web
   variables:
     GLUON_TARGET: ramips-mt7621
  
 target:ramips-mt76x8:
   extends: .target
-  only: 
-    - nightly
-    - schedules
-    - web
   variables:
     GLUON_TARGET: ramips-mt76x8
  
 target:x86-generic:
   extends: .target
-  only: 
-    - nightly
-    - schedules
-    - web
   variables:
     GLUON_TARGET: x86-generic
  
 target:x86-geode:
   extends: .target
-  only: 
-    - nightly
-    - schedules
-    - web
   variables:
     GLUON_TARGET: x86-geode
  
 target:x86-64:
   extends: .target
-  except:
-    - tags
   variables:
     GLUON_TARGET: x86-64
 
