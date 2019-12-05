@@ -91,7 +91,7 @@ package:
   script:
     - make -C gluon update GLUON_SITEDIR="$CI_PROJECT_DIR"
     - for branch in "stable" "beta" "nightly" "experimental"; do make -C gluon manifest GLUON_BRANCH="$branch" GLUON_SITEDIR="$CI_PROJECT_DIR" V=1; done
-    - test -n "$GLUON_SIGN_KEY" && cd gluon && ./contrib/sign.sh <(echo "$GLUON_SIGN_KEY") output/images/sysupgrade/nightly.manifest && ./contrib/sign.sh <(echo "$GLUON_SIGN_KEY") output/images/sysupgrade/experimental.manifest
+    - if [ -n "$GLUON_SIGN_KEY" ]; then cd gluon && for branch in "nightly" "experimental"; do ./contrib/sign.sh <(echo "$GLUON_SIGN_KEY") "output/images/sysupgrade/$branch.manifest"; done; fi
   artifacts:
     paths:
       - gluon/output
