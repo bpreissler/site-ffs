@@ -32,9 +32,7 @@ generate_date:
   cache:
     paths:
       - gluon/openwrt/dl
-      - gluon/openwrt/staging_dir
-      - gluon/openwrt/feeds
-    key: "target-$GLUON_TARGET"
+    key: "build"
  
 target:ar71xx-generic:
   extends: .target
