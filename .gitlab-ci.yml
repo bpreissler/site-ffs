@@ -21,8 +21,8 @@ generate_date:
 .target:
   stage: build
   script:
-    - make -C gluon update GLUON_SITEDIR="$CI_PROJECT_DIR" BUILD_DATE=$(cat build.date)
-    - make -C gluon GLUON_SITEDIR="$CI_PROJECT_DIR" GLUON_TARGET="$GLUON_TARGET" GLUON_BRANCH=stable BUILD_DATE=$(cat build.date) V=1 -j`nproc`
+    - make -C gluon update GLUON_SITEDIR="$CI_PROJECT_DIR" FFS_BUILD_DATE=$(cat build.date)
+    - make -C gluon GLUON_SITEDIR="$CI_PROJECT_DIR" GLUON_TARGET="$GLUON_TARGET" GLUON_BRANCH=stable FFS_BUILD_DATE=$(cat build.date) V=1 -j`nproc`
   except:
     - tags
   artifacts: 
