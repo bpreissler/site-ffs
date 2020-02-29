@@ -5,14 +5,24 @@ variables:
   DOCKER_DRIVER: overlay2
 
 stages:
+  - generate_date
   - build
   - package
+
+generate_date:
+  stage: generate_date
+  script: 
+    - date '+%Y-%m-%d' > build.date
+  artifacts:
+    paths:
+      - build.date
+    expire_in: 1 day
 
 .target:
   stage: build
   script:
-    - make -C gluon update GLUON_SITEDIR="$CI_PROJECT_DIR"
-    - make -C gluon GLUON_SITEDIR="$CI_PROJECT_DIR" GLUON_TARGET="$GLUON_TARGET" GLUON_BRANCH=stable V=1 -j`nproc`
+    - make -C gluon update GLUON_SITEDIR="$CI_PROJECT_DIR" BUILD_DATE=$(cat build.date)
+    - make -C gluon GLUON_SITEDIR="$CI_PROJECT_DIR" GLUON_TARGET="$GLUON_TARGET" GLUON_BRANCH=stable BUILD_DATE=$(cat build.date) V=1 -j`nproc`
   except:
     - tags
   artifacts: 
