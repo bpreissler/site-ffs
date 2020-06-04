@@ -1,7 +1,7 @@
 GLUON_SITE_FEEDS='ffs ssidchanger'
 
 PACKAGES_FFS_REPO=https://gitlab.freifunk-stuttgart.de/firmware/gluon-packages.git
-PACKAGES_FFS_COMMIT=caff6fa7e00e4112ebe084955749cb9e42685e90
+PACKAGES_FFS_COMMIT=2417ef727e7a972d1cba1359daa2980334a6881c
 
 PACKAGES_SSIDCHANGER_REPO=https://gitlab.freifunk-stuttgart.de/firmware/gluon-ssid-changer.git
 PACKAGES_SSIDCHANGER_COMMIT=3c6750ce8fc9cedabfa8a6f479fb12d343c6ecc2
