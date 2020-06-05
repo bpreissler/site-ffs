@@ -41,7 +41,8 @@ update:
   cache:
     paths:
       - gluon/openwrt/dl
-    key: "build"
+      - gluon/openwrt/staging_dir
+    key: "build-$CI_COMMIT_REF_SLUG"
  
 target:ar71xx-generic:
   extends: .target
