@@ -10,6 +10,9 @@ GLUON_FEATURES := \
 	web-advanced \
 	web-wizard
 
+GLUON_FEATURES_standard := \
+	wireless-encryption-wpa3
+
 GLUON_SITE_PACKAGES := \
 	gluon-config-mode-zip \
 	gluon-web-private-wifi \
