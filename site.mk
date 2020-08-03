@@ -20,7 +20,6 @@ GLUON_SITE_PACKAGES := \
 	gluon-neighbour-info \
 	gluon-mesh-vpn-fastd \
 	gluon-ssid-changer \
-	haveged \
 	iptables \
 	iwinfo \
 	ffs-set-segment \
