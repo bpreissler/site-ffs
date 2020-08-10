@@ -14,16 +14,16 @@ GLUON_FEATURES_standard := \
 	wireless-encryption-wpa3
 
 GLUON_SITE_PACKAGES := \
-	gluon-config-mode-zip \
-	gluon-web-private-wifi \
-	gluon-web-mesh-vpn-fastd \
-	gluon-neighbour-info \
-	gluon-mesh-vpn-fastd \
-	gluon-ssid-changer \
-	iptables \
-	iwinfo \
 	ffs-set-segment \
-	ffs-watchdog
+	ffs-watchdog \
+	gluon-config-mode-zip \
+	gluon-mesh-vpn-fastd \
+	gluon-neighbour-info \
+	gluon-ssid-changer \
+	gluon-web-mesh-vpn-fastd \
+	gluon-web-private-wifi \
+	iptables \
+	iwinfo
 
 ADD_DRIVERS_X86 := \
 	kmod-8139too \
