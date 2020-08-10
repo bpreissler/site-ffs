@@ -23,7 +23,8 @@ GLUON_SITE_PACKAGES := \
 	gluon-web-mesh-vpn-fastd \
 	gluon-web-private-wifi \
 	iptables \
-	iwinfo
+	iwinfo \
+	respondd-module-airtime
 
 ADD_DRIVERS_X86 := \
 	kmod-8139too \
