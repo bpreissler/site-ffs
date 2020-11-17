@@ -41,6 +41,7 @@ update:
     - test -d ffs-openwrt-dl-cache || git clone ssh://git@gitlab.freifunk-stuttgart.de:22220/firmware/ffs-openwrt-dl-cache.git
     - git -C ffs-openwrt-dl-cache pull
     - rm -rf gluon/openwrt/dl && mkdir -p gluon/openwrt && ln -s ../../ffs-openwrt-dl-cache gluon/openwrt/dl
+    - rm -rf gluon/openwrt/staging_dir && mkdir -p staging_dir && ln -s ../../staging_dir gluon/openwrt/staging_dir
   script:
     - make -C gluon GLUON_SITEDIR="$CI_PROJECT_DIR" GLUON_TARGET="$GLUON_TARGET" GLUON_BRANCH=stable FFS_BUILD_DATE=$(cat build.date) V=1 -j`nproc`
     - cd gluon/openwrt/dl && git add . && git commit -m "update DL cache" && git push || true
@@ -53,7 +54,7 @@ update:
   cache:
     paths:
       - ffs-openwrt-dl-cache
-      - gluon/openwrt/staging_dir
+      - staging_dir
     key: "build-$CI_COMMIT_REF_SLUG"
  
 target:ar71xx-generic:
