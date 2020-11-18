@@ -18,6 +18,8 @@ generate_date:
     paths:
       - build.date
     expire_in: 1 day
+  except:
+    - tags
 
 update:
   stage: update
@@ -27,6 +29,8 @@ update:
     paths:
       - gluon/
     expire_in: 1 day
+  except:
+    - tags
 
 .target:
   stage: build
@@ -170,3 +174,5 @@ package:
     paths:
       - gluon/output
     expire_in: 7 days
+  except:
+    - tags
